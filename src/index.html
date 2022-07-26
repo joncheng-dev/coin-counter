@@ -1,9 +1,55 @@
 <!DOCTYPE html>
 <html lang="en-US">
   <head>
-    <title>Title of Page Here</title>
+    <title>Coin Counter</title>
   </head>
   <body>
-    <h3>Title of Page Here</h3>
+    <div class="container">
+      <h3>Coin Counter</h3>
+      <br />
+      <h6>
+        This app determines the number of exact change in specific coins given
+        an amount of money in U.S. dollars.
+      </h6>
+      <br />
+      <div class="amountOfMoney"></div>
+      <br />
+      <table class="table table-dark">
+        <thead>
+          <tr>
+            <th scope="col">Coin</th>
+            <th scope="col">Individual Value</th>
+            <th scope="col">Number to Include</th>
+            <th scope="col">Total Contributed Value</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">Quarters</th>
+            <td>$0.25</td>
+            <td class="numQuarters"></td>
+            <td class="sumQuartersValue"></td>
+          </tr>
+          <tr>
+            <th scope="row">Dimes</th>
+            <td>$0.10</td>
+            <td class="numDimes"></td>
+            <td class="sumDimesValue"></td>
+          </tr>
+          <tr>
+            <th scope="row">Nickels</th>
+            <td>$0.05</td>
+            <td class="numNickels"></td>
+            <td class="sumNickelsValue"></td>
+          </tr>
+          <tr>
+            <th scope="row">Pennies</th>
+            <td>$0.01</td>
+            <td class="sumPennies"></td>
+            <td class="sumPenniesValue"></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
   </body>
 </html>

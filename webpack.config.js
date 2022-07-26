@@ -15,7 +15,7 @@ module.exports = {
   plugins: [
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
-      title: "Name of App Here",
+      title: "Coin Counter",
       template: "./src/index.html",
       inject: "body",
     }),
