@@ -1,14 +1,11 @@
-export default function coinCount(amount, coinTotal = []) {
+export default function coinCount(amount, denomValue, coinTotal = []) {
   if (amount === 0) {
-    // coinTotal.push(quarters);
-    // coinTotal.push(dimes);
-    // coinTotal.push(nickels);
-    // coinTotal.push(pennies);
     return coinTotal;
   } else {
+    coinTotal.push((amount - (amount % denomValue)) / denomValue);
+    if (amount % denomValue > 0) {
+      coinTotal.push(99);
+    }
     return coinTotal;
-    // remainder = amount % 25;
-    // tempValue = amount - remainder;
-    // numQuarters = tempValue / 25;
   }
 }
