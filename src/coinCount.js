@@ -4,9 +4,9 @@ export default function coinCount(amount, coinTotal = []) {
     // coinTotal.push(dimes);
     // coinTotal.push(nickels);
     // coinTotal.push(pennies);
-    return amount;
+    return coinTotal;
   } else {
-    return amount;
+    return coinTotal;
     // remainder = amount % 25;
     // tempValue = amount - remainder;
     // numQuarters = tempValue / 25;
