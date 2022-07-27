@@ -33,4 +33,13 @@ describe("coinCount function", () => {
   test("should return an array of size 2 when after counting quarters, there is a leftover sum", () => {
     expect(coinCount(amount, denomValue)).toHaveLength(2);
   });
+  test("array position 2 should be 10", () => {
+    expect(coinCount(amount, denomValue)).toHaveLength(2);
+  });
 });
+
+// describe("coinCount function", () => {
+//   let amount = 103;
+//   let denomValue = 25;
+//   test("should return ")
+// });
