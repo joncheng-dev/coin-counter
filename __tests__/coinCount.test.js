@@ -38,8 +38,36 @@ describe("coinCount function", () => {
   });
 });
 
-// describe("coinCount function", () => {
-//   let amount = 103;
-//   let denomValue = 25;
-//   test("should return ")
-// });
+describe("coinCount function", () => {
+  let amount = 103;
+  let denomValue = 25;
+  test("should return an array size 2", () => {
+    expect(coinCount(amount, denomValue)).toHaveLength(2);
+  });
+  test("should return an array where position 0 is 4", () => {
+    expect(coinCount(amount, denomValue)[0]).toBe(4);
+  });
+  test("should return an array where position 1 is 3", () => {
+    expect(coinCount(amount, denomValue)[1]).toBe(3);
+  });
+});
+
+describe("coinCount function", () => {
+  let amount = 119;
+  let denomValue = 25;
+  test("should return an array size 4", () => {
+    expect(coinCount(amount, denomValue)).toHaveLength(4);
+  });
+  test("should return an array where position 0 is 4", () => {
+    expect(coinCount(amount, denomValue)[0]).toBe(4);
+  });
+  test("should return an array where position 1 is 1", () => {
+    expect(coinCount(amount, denomValue)[1]).toBe(1);
+  });
+  test("should return an array where position 2 is 1", () => {
+    expect(coinCount(amount, denomValue)[2]).toBe(1);
+  });
+  test("should return an array where position 3 is 4", () => {
+    expect(coinCount(amount, denomValue)[3]).toBe(4);
+  });
+});

@@ -9,20 +9,14 @@ export default function coinCount(amount, denomValue, coinTally = []) {
     const thisCoin = [...coinTally];
     thisCoin.push((amount - remainder) / denomValue);
     // Here I'll handle reiterations of the recursive function.
-    if (remainder > 9 && remainder < 24) {
-      const updatedArray = coinCount(remainder, 10, thisCoin);
-      console.log("Array after dimes: ", updatedArray);
-      return updatedArray;
+    if (remainder > 9 && remainder < 25) {
+      return coinCount(remainder, 10, thisCoin);
     }
     if (remainder > 4 && remainder < 10) {
-      const updatedArray = coinCount(remainder, 5, thisCoin);
-      console.log("Array after nickels: ", updatedArray);
-      return updatedArray;
+      return coinCount(remainder, 5, thisCoin);
     }
     if (remainder < 5) {
-      const updatedArray = coinCount(remainder, 1, thisCoin);
-      console.log("Array after pennies: ", updatedArray);
-      return updatedArray;
+      return coinCount(remainder, 1, thisCoin);
     }
     // // Once else statement completes, exit.
     // console.log("This coin: ", thisCoin);
