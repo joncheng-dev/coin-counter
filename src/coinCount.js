@@ -11,7 +11,9 @@ export default function coinCount(
     const thisCoin = [...coinTally];
 
     const numCoins = (amount - remainder) / denomValue;
-    thisCoin.push(`${coinDenomination}: ${numCoins}`);
+    if (numCoins != 0) {
+      thisCoin.push(`${coinDenomination}: ${numCoins}`);
+    }
 
     if (remainder > 9 && remainder < 25) {
       return coinCount(remainder, 10, "dimes", thisCoin);
