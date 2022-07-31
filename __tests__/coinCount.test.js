@@ -2,9 +2,56 @@ import closureCoinCount from "../src/coinCount.js";
 
 // Tests for Part 2 (Closure).
 describe("closureCoinCount function", () => {
-  let value = 103;
-  test("should take a number -- number of cents -- return number of quarters in coins", () => {
-    expect(closureCoinCount(value)(25)).toEqual(3);
+  const originalCents = 119;
+  const numQuarters = closureCoinCount(25);
+  const numDimes = closureCoinCount(10);
+  const numNickels = closureCoinCount(5);
+  const numPennies = closureCoinCount(1);
+
+  test("should take an input -- number of cents -- and return an array giving number of quarters and remaining cents", () => {
+    expect(numQuarters(originalCents)).toEqual([4, 19]);
+  });
+
+  const remainCentsBeforeCountDimes = 19;
+  test("should take an input -- number of cents -- and return an array giving number of dimes and remaining cents", () => {
+    expect(numDimes(remainCentsBeforeCountDimes)).toEqual([1, 9]);
+  });
+
+  const remainCentsBeforeCountNickels = 9;
+  test("should take an input -- number of cents -- and return an array giving number of nickels and remaining cents", () => {
+    expect(numNickels(remainCentsBeforeCountNickels)).toEqual([1, 4]);
+  });
+
+  const remainCentsBeforeCountPennies = 4;
+  test("should take an input -- number of cents -- and return an array giving number of nickels and remaining cents", () => {
+    expect(numPennies(remainCentsBeforeCountPennies)).toEqual([4, 0]);
+  });
+});
+
+describe("closureCoinCount function", () => {
+  const originalCents = 499;
+  const numQuarters = closureCoinCount(25);
+  const numDimes = closureCoinCount(10);
+  const numNickels = closureCoinCount(5);
+  const numPennies = closureCoinCount(1);
+
+  test("should take an input -- number of cents -- and return an array giving number of quarters and remaining cents", () => {
+    expect(numQuarters(originalCents)).toEqual([19, 24]);
+  });
+
+  const remainCentsBeforeCountDimes = 24;
+  test("should take an input -- number of cents -- and return an array giving number of dimes and remaining cents", () => {
+    expect(numDimes(remainCentsBeforeCountDimes)).toEqual([2, 4]);
+  });
+
+  const remainCentsBeforeCountNickels = 4;
+  test("should take an input -- number of cents -- and return an array giving number of nickels and remaining cents", () => {
+    expect(numNickels(remainCentsBeforeCountNickels)).toEqual([0, 4]);
+  });
+
+  const remainCentsBeforeCountPennies = 4;
+  test("should take an input -- number of cents -- and return an array giving number of nickels and remaining cents", () => {
+    expect(numPennies(remainCentsBeforeCountPennies)).toEqual([4, 0]);
   });
 });
 

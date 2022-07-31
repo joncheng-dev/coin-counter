@@ -1,9 +1,13 @@
-// Outer function here
-export default function closureCoinCount(initialValue) {
+// coinCount -- Using closure
+export default function closureCoinCount(denomValue) {
+  const relevantInfo = [];
   // Put inner function here:
-  // Returns number of remaining cents -- after removing quarters.
-  return function (denomValue) {
-    return `Quarters: ${initialValue % denomValue}`;
+  return function (initialValue) {
+    const remaining = initialValue % denomValue;
+    const numCoins = (initialValue - remaining) / denomValue;
+    relevantInfo.push(numCoins);
+    relevantInfo.push(remaining);
+    return relevantInfo;
   };
 }
 
